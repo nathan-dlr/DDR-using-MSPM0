@@ -34,14 +34,11 @@ Lab9HMain.o: ../Lab9HMain.cpp \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/ST7735.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/LaunchPad.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/TExaS.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Timer.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SlidePot.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC5.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SPI.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/SmallFont.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/LED.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Switch.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Sound.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/images/images.h \
@@ -52,9 +49,7 @@ Lab9HMain.o: ../Lab9HMain.cpp \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC.cpp \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/FIFO2.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/IRxmt.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/UART2.h
+ /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/FIFO2.h
 
 /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/msp.h:
 
@@ -122,21 +117,15 @@ Lab9HMain.o: ../Lab9HMain.cpp \
 
 /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/LaunchPad.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/TExaS.h:
-
 /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Timer.h:
 
 /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SlidePot.h:
 
 /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC5.h:
-
 /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SPI.h:
 
 /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/SmallFont.h:
-
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/LED.h:
 
 /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Switch.h:
 
@@ -159,7 +148,3 @@ Lab9HMain.o: ../Lab9HMain.cpp \
 /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h:
 
 /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/FIFO2.h:
-
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/IRxmt.h:
-
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/UART2.h:

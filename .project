@@ -31,11 +31,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/inc/Clock.cpp</locationURI>
 		</link>
 		<link>
-			<name>DAC5.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/inc/DAC5.cpp</locationURI>
-		</link>
-		<link>
 			<name>LaunchPad.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/inc/LaunchPad.cpp</locationURI>

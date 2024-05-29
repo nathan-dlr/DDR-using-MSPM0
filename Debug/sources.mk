@@ -126,6 +126,5 @@ GEN_OPTS__QUOTED :=
 SUBDIRS := \
 . \
 images \
-images/pipedreams \
 ticlang \
 
