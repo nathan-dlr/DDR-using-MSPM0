@@ -137,6 +137,8 @@ uint32_t Random(uint32_t n){
 
 SlidePot Sensor(1500,0); // copy calibration from Lab 7
 
+bool remove_arrow = false;
+
 class Arrows {
 private:
     uint8_t x_coord;
@@ -223,6 +225,7 @@ public:
    bool pressed () {
        if ((Key_In() & button) && (target > 0)) {
            remove = true;
+           remove_arrow = true;
            return true;
        }
        else {
@@ -234,11 +237,13 @@ public:
    }
    int Adjust_List();
 };
+
 Arrows right_arrow(96, right, 32, 38, 8);
 Arrows left_arrow(5,left,  29 , 36, 1);
 Arrows up_arrow(66, up, 29, 38, 4);
 Arrows down_arrow(35, down, 29, 37, 2);
 Arrows directions[4] = {right_arrow, left_arrow, up_arrow, down_arrow};
+
 
 uint32_t count = 0;
 uint8_t count2 = 0;
@@ -286,6 +291,7 @@ void TIMG12_IRQHandler(void){uint32_t pos,msg;
     for (int j = 0; j < active_arrows.num_arrows; j++) {
         active_arrows.arr[j].move();
     }
+
 
     right_arrow.Adjust_List();
     for (int k = 0; k < active_arrows.num_arrows; k++) {
@@ -628,12 +634,16 @@ int main(void) {
     __enable_irq();
     ST7735_FillScreen(0x0000);
     while(1) {
+        if (remove_arrow) {
+            ST7735_FillRect(10,40,128,60,ST7735_BLACK);
+            remove_arrow = false;
+        }
         ST7735_DrawBitmap(0, 45, background2, 128, 48);
 
         for (i = 0; i < active_arrows.num_arrows; i++) {
             active_arrows.arr[i].draw();
         }
-        ST7735_SetCursor(5, 5);
+        ST7735_SetCursor(7, 14);
         if (isEnglish) {
             ST7735_OutString((char *)"Score: ");
         }
@@ -641,16 +651,16 @@ int main(void) {
             ST7735_OutString((char *)"Puntaje: ");
         }
         ST7735_OutUDec(score);
-        if ((count > 100) && (count  % 10 == 0)) {
+        if ((count > 50) && (count  % 10 == 0)) {
             random_arrow();
         }
-        if (count > 3000) {
+        if (count > 100) {
           break;
         }
 
     }
     ST7735_FillScreen(0x0000);
-    ST7735_SetCursor(7, 0);
+    ST7735_SetCursor(5, 1);
     if (isEnglish) {
         ST7735_OutString((char *)"Score: ");
     }
