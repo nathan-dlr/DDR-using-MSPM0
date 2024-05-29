@@ -3,7 +3,7 @@
 // Lab 9 ECE319H
 // Nathan DeLaRosa
 // Thompson Truong
-// Last Modified: 1/1/2024
+// Last Modified: 5/29/2024
 
 #include <stdio.h>
 #include <stdint.h>
@@ -84,13 +84,6 @@ void SysTick_Handler(void){
     flag8 = 1;  // need more data
   }
 }
-
-
-
-
-
-
-
 
 
 void Key_Init(void){
@@ -292,7 +285,6 @@ void TIMG12_IRQHandler(void){uint32_t pos,msg;
     for (int k = 0; k < active_arrows.num_arrows; k++) {
         active_arrows.arr[k] = active_arrows.temp[k];
     }
-    //active_arrows.arr = Temp;
     count++;
     count2 += 3;
     // 4) start sounds
@@ -315,40 +307,7 @@ void random_arrow() {
 
 
 
-// use main to observe graphics
-int main2(void){ // main2
-  __disable_irq();
-  PLL_Init(); // set bus speed
-  LaunchPad_Init();
-  ST7735_InitPrintf();
-    //note: if you colors are weird, see different options for
-    // ST7735_InitR(INITR_REDTAB); inside ST7735_InitPrintf()
-  ST7735_FillScreen(ST7735_BLACK);
-  ST7735_DrawBitmap(0, 45, background2, 128, 39);
-  ST7735_DrawBitmap(96,70, right, 29, 32); //70 is OOB
-  ST7735_DrawBitmap(3, 60, left, 30, 28); //40 ish is great
-
-
-
-
-    //Clock_Delay1ms(50);              // delay 50 msec
-
-  //ST7735_FillScreen(0x0000);   // set screen to black
-  //ST7735_SetCursor(1, 1);
-  //ST7735_OutString((char *)"GAME OVER");
-  //ST7735_SetCursor(1, 2);
-  //ST7735_OutString((char *)"Nice try,");
-  //ST7735_SetCursor(1, 3);
-  //ST7735_OutString((char *)"Earthling!");
-  //ST7735_SetCursor(2, 4);
-  //ST7735_OutUDec(1234);
-  while(1){
-
-  }
-}
-
-// use main3 to test switches and LEDs
-int main3(void){ // main3
+int test_switches(void){ // main3
     uint32_t last=0,now;
     Clock_Init80MHz(0);
     LaunchPad_Init();
@@ -365,7 +324,7 @@ int main3(void){ // main3
     }
 }
 
-int main30(void){ // start screen test
+int start_screen_test(void){ // start screen test
   __disable_irq();
   PLL_Init(); // set bus speed
   LaunchPad_Init();
