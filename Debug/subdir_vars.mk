@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../Arrows.cpp \
 /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.cpp \
 ../FIFO2.cpp \
 ../Lab9HMain.cpp \
@@ -22,6 +23,7 @@ CMD_SRCS += \
 ../mspm0g3507.cmd 
 
 OBJS += \
+./Arrows.o \
 ./Clock.o \
 ./FIFO2.o \
 ./Lab9HMain.o \
@@ -37,6 +39,7 @@ OBJS += \
 ./ff.o 
 
 CPP_DEPS += \
+./Arrows.d \
 ./Clock.d \
 ./FIFO2.d \
 ./Lab9HMain.d \
@@ -52,6 +55,7 @@ CPP_DEPS += \
 ./ff.d 
 
 OBJS__QUOTED += \
+"Arrows.o" \
 "Clock.o" \
 "FIFO2.o" \
 "Lab9HMain.o" \
@@ -67,6 +71,7 @@ OBJS__QUOTED += \
 "ff.o" 
 
 CPP_DEPS__QUOTED += \
+"Arrows.d" \
 "Clock.d" \
 "FIFO2.d" \
 "Lab9HMain.d" \
@@ -82,6 +87,7 @@ CPP_DEPS__QUOTED += \
 "ff.d" 
 
 CPP_SRCS__QUOTED += \
+"../Arrows.cpp" \
 "/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.cpp" \
 "../FIFO2.cpp" \
 "../Lab9HMain.cpp" \

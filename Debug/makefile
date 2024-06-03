@@ -8,6 +8,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./Arrows.o" \
 "./Clock.o" \
 "./FIFO2.o" \
 "./Lab9HMain.o" \
@@ -157,9 +158,9 @@ ECE319K_Lab9H.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "Clock.o" "FIFO2.o" "Lab9HMain.o" "LaunchPad.o" "SPI.o" "ST7735.o" "SlidePot.o" "SmallFont.o" "Switch.o" "TExaS.o" "Timer.o" "diskio.o" "ff.o" "ticlang/startup_mspm0g3507_ticlang.o" 
+	-$(RM) "Arrows.o" "Clock.o" "FIFO2.o" "Lab9HMain.o" "LaunchPad.o" "SPI.o" "ST7735.o" "SlidePot.o" "SmallFont.o" "Switch.o" "TExaS.o" "Timer.o" "diskio.o" "ff.o" "ticlang/startup_mspm0g3507_ticlang.o" 
 	-$(RM) "ticlang/startup_mspm0g3507_ticlang.d" 
-	-$(RM) "Clock.d" "FIFO2.d" "Lab9HMain.d" "LaunchPad.d" "SPI.d" "ST7735.d" "SlidePot.d" "SmallFont.d" "Switch.d" "TExaS.d" "Timer.d" "diskio.d" "ff.d" 
+	-$(RM) "Arrows.d" "Clock.d" "FIFO2.d" "Lab9HMain.d" "LaunchPad.d" "SPI.d" "ST7735.d" "SlidePot.d" "SmallFont.d" "Switch.d" "TExaS.d" "Timer.d" "diskio.d" "ff.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

@@ -40,7 +40,6 @@ Lab9HMain.o: ../Lab9HMain.cpp \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SPI.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/SmallFont.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Switch.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Sound.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/images/images.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/integer.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/diskio.h \
@@ -49,7 +48,10 @@ Lab9HMain.o: ../Lab9HMain.cpp \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC.cpp \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC.h \
  /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/FIFO2.h
+ /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/FIFO2.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Arrows.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/arrow_list.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/common.h
 
 /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/msp.h:
 
@@ -129,8 +131,6 @@ Lab9HMain.o: ../Lab9HMain.cpp \
 
 /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Switch.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Sound.h:
-
 /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/images/images.h:
 
 /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/integer.h:
@@ -148,3 +148,9 @@ Lab9HMain.o: ../Lab9HMain.cpp \
 /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h:
 
 /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/FIFO2.h:
+
+/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Arrows.h:
+
+/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/arrow_list.h:
+
+/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/common.h:

@@ -18,27 +18,21 @@
 #include "../inc/SPI.h"
 #include "SmallFont.h"
 #include "Switch.h"
-#include "Sound.h"
 #include "images/images.h"
 #include "integer.h"
 #include "diskio.h"
 #include "ff.h"
 #include "../inc/DAC.cpp"
 #include "../inc/FIFO2.h"
-
-
-
+#include "Arrows.h"
+#include "arrow_list.h"
+#include "common.h"
 
 
 extern "C" void __disable_irq(void);
 extern "C" void __enable_irq(void);
 extern "C" void TIMG12_IRQHandler(void);
 
-//#define PA24INDEX 53
-//#define PA25INDEX 54
-//#define PA26INDEX 58
-//#define PA27INDEX 59
-//#define PA28INDEX 2
 
 static FATFS g_sFatFs;
 FIL Handle,Handle2;
@@ -86,6 +80,7 @@ void SysTick_Handler(void){
 }
 
 
+<<<<<<< HEAD
 void Key_Init(void){
 // Assumes LaunchPad_Init has been called
 // I.e., PortB has already been reset and activated (do not reset PortB here again)
@@ -109,10 +104,14 @@ uint32_t Key_In(void){
 // the data sheet says the ADC does not work when clock is 80 MHz
 // however, the ADC seems to work on my boards at 80 MHz
 // I suggest you try 80MHz, but if it doesn't work, switch to 40MHz
+=======
+
+>>>>>>> 188de40 (created seperate files for arrow class, arrow_list struct, and switch inputs. moved adjust_arrow function into Lab9HMain.cpp and added simple class methods to access private data members)
 void PLL_Init(void){ // set phase lock loop (PLL)
   //Clock_Init40MHz(); // run this line for 40MHz
   Clock_Init80MHz(0);   // run this line for 80MHz
 }
+
 
 uint32_t M=1;
 uint32_t Random32(void){
@@ -123,108 +122,12 @@ uint32_t Random(uint32_t n){
   return (Random32()>>16)%n;
 }
 
+
 SlidePot Sensor(1500,0); // copy calibration from Lab 7
 
 bool remove_arrow = false;
 
-class Arrows {
-private:
-    uint8_t x_coord;
-    uint8_t y_coord;
-    const uint16_t *image; //pointer to bitmap array
-    uint8_t h, w;          //height/width
-    uint8_t button;        //corresponding input value
-    uint8_t target;        //out of bounds = 0, bad = 1, good = 2, great = 3
-    bool remove;
-
-public:
-    Arrows() {
-        x_coord = 0;
-        y_coord = 0;
-        image = nullptr;
-        h = 0;
-        w = 0;
-        button = 0;
-        target = 0;
-        remove = false;
-    }
-    Arrows(uint8_t x_coord, const uint16_t *image, uint8_t w, uint8_t h, uint8_t button) {
-        this->x_coord = x_coord;
-        this->image = image;
-        this->h = h;
-        this->w = w;
-        this->button = button;
-        y_coord = 160;
-        target = 0;  //0 = out of bounds, 1 = okay, 2= good, 3 = great
-        remove = false;
-    }
-    Arrows(Arrows &other) {
-        x_coord = other.x_coord;
-        y_coord = other.y_coord;
-        image = other.image;
-        h = other.h;
-        w = other.w;
-        button = other.button;
-        target = other.target;
-        remove = other.remove;
-    }
-    Arrows& operator=(const Arrows& other) {
-        if (this != &other) {
-            this->x_coord = other.x_coord;
-            this->image = other.image;
-            this->h = other.h;
-            this->w = other.w;
-            this->button = other.button;
-            this->y_coord = other.y_coord;
-            this->target = other.target;
-            this->remove = other.remove;
-        }
-        return *this;
-    }
-
-    bool move(){ //returns true if arrows is completely off screen, and false if still on screen
-        if (!remove) {
-            y_coord -= 5;
-            if (y_coord < 6) {
-                remove = true;
-                return false;
-            }
-            else {
-                target_zone();
-                return true;
-            }
-        }
-        return false;
-    }
-    void target_zone() {
-        if ((y_coord >= 65) || (y_coord < 15)) {
-            target = 0;
-        }
-        else if ((55 < y_coord) && (y_coord <= 65) || ((15 < y_coord) && (y_coord <= 20))) {
-            target = 1;
-        }
-        else if ((40 < y_coord) && (y_coord <= 55) || ((20 < y_coord) && (y_coord <= 35))) {
-            target = 2;
-        }
-        else if ((35 < y_coord) && (y_coord <= 40)) {
-            target = 3;
-        }
-   }
-   bool pressed () {
-       if ((Key_In() & button) && (target > 0)) {
-           remove = true;
-           remove_arrow = true;
-           return true;
-       }
-       else {
-           return false;
-       }
-   }
-   void draw() {
-       ST7735_DrawBitmap(x_coord, y_coord, image, w, h);
-   }
-   int Adjust_List();
-};
+arrow_list_t active_arrows;
 
 Arrows right_arrow(96, right, 32, 38, 8);
 Arrows left_arrow(5,left,  29 , 36, 1);
@@ -233,54 +136,52 @@ Arrows down_arrow(35, down, 29, 37, 2);
 Arrows directions[4] = {right_arrow, left_arrow, up_arrow, down_arrow};
 
 
-uint32_t count = 0;
-uint8_t count2 = 0;
+
+uint32_t time_counter = 0;
+uint8_t rndm_arrow_cntr = 0;
 uint32_t score = 0;
 
-struct arrow_list {
-    Arrows arr[12];
-    Arrows temp[12];
-    uint8_t num_arrows = 0;
-};
-typedef struct arrow_list arrow_list_t;
 
-arrow_list_t active_arrows;
-
-int Arrows::Adjust_List(){
+void adjust_arrows() {
     int cnt = 0;
-    int add = 0;
-    for (int i = 0; i < active_arrows.num_arrows; i++) {
-        if (!active_arrows.arr[i].remove) {
-            active_arrows.temp[cnt] = active_arrows.arr[i];
-            cnt++;
+        int add = 0;
+        for (int i = 0; i < active_arrows.num_arrows; i++) {
+            if (!active_arrows.arr[i].get_remove_state()) {
+                active_arrows.temp[cnt] = active_arrows.arr[i];
+                cnt++;
+            }
+            else {
+                add += active_arrows.arr[i].get_score();
+            }
         }
-        else {
-            add += active_arrows.arr[i].target;
+        active_arrows.num_arrows = cnt;
+        score += add * 10;
+
+        for (int k = 0; k < active_arrows.num_arrows; k++) {
+            active_arrows.arr[k] = active_arrows.temp[k];
         }
-    }
-    active_arrows.num_arrows = cnt;
-    score += add * 10;
-    return target;
 }
+
 
 // games  engine runs at 30Hz
 void TIMG12_IRQHandler(void){uint32_t pos,msg;
   if((TIMG12->CPU_INT.IIDX) == 1){ // this will acknowledge
     GPIOB->DOUTTGL31_0 = GREEN; // toggle PB27 (minimally intrusive debugging)
     GPIOB->DOUTTGL31_0 = GREEN; // toggle PB27 (minimally intrusive debugging)temp arr[12];t
-// game engine goes here
-    // 1) sample slide pot
-    // 2) read input switches
+    //READ SWITCH INPUTS
     for (int i = 0; i < active_arrows.num_arrows; i++) {
         active_arrows.arr[i].pressed();
         }
     }
-    // 3) move sprites
+    //MOVE SPRITES
     for (int j = 0; j < active_arrows.num_arrows; j++) {
         active_arrows.arr[j].move();
     }
 
+    //ADJUST LIST OF ARROWS
+    adjust_arrows();
 
+<<<<<<< HEAD
     right_arrow.Adjust_List();
     for (int k = 0; k < active_arrows.num_arrows; k++) {
         active_arrows.arr[k] = active_arrows.temp[k];
@@ -290,6 +191,11 @@ void TIMG12_IRQHandler(void){uint32_t pos,msg;
     // 4) start sounds
     // 5) set semaphore
     // NO LCD OUTPUT IN INTERRUPT SERVICE ROUTINES
+=======
+    //INCREMENT COUNTERS
+    time_counter++;
+    rndm_arrow_cntr += 3;
+>>>>>>> 188de40 (created seperate files for arrow class, arrow_list struct, and switch inputs. moved adjust_arrow function into Lab9HMain.cpp and added simple class methods to access private data members)
     GPIOB->DOUTTGL31_0 = GREEN; // toggle PB27 (minimally intrusive debugging)
 }
 
@@ -297,16 +203,19 @@ void TIMG12_IRQHandler(void){uint32_t pos,msg;
 
 void random_arrow() {
     uint8_t idx = active_arrows.num_arrows;
-    int num = Random(count2) % 4;
+    int num = Random(rndm_arrow_cntr) % 4;
     active_arrows.arr[idx] = directions[num];
     active_arrows.num_arrows += 1;
-    count++;
+    time_counter++;
 }
 
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 188de40 (created seperate files for arrow class, arrow_list struct, and switch inputs. moved adjust_arrow function into Lab9HMain.cpp and added simple class methods to access private data members)
 int test_switches(void){ // main3
     uint32_t last=0,now;
     Clock_Init80MHz(0);
@@ -333,7 +242,6 @@ int start_screen_test(void){ // start screen test
     // ST7735_InitR(INITR_REDTAB); inside ST7735_InitPrintf()
   ST7735_FillScreen(ST7735_BLACK);
   Sensor.Init(); // PB18 = ADC1 channel 5, slidepot
-  Switch_Init(); // initialize switches
   //Sound_Init();  // initialize sound
   Key_Init();
     // initialize interrupts on TimerG12 at 30 Hz
@@ -384,13 +292,6 @@ int start_screen_test(void){ // start screen test
 int music(void){ // final main
   UINT successfulreads, successfulwrites;
   __disable_irq();
- // set bus speed
-  //ST7735_InitPrintf();
-  //ST7735_FillScreen(ST7735_BLACK);
-  //Sensor.Init(); // PB18 = ADC1 channel 5, slidepot // initialize switches
-  //LED_Init();    // initialize LED
-  //Sound_Init();  // initialize sound
-  //TExaS_Init(0,0,&TExaS_LaunchPadLogicPB27PB26); // PB27 and PB26
   ///music stuff
   front8 = Buf2; // buffer being output to DAC
   back8 = Buf;   // buffer being written to from SDC
@@ -398,9 +299,6 @@ int music(void){ // final main
   flag8 = 1; // 1 means need data into back
   BufCount8 = 0;
   DAC_Init(); // 12bit DAC on PA15
-  //////////
-    // initialize interrupts on TimerG12 at 30 Hz
-  //TimerG12_IntArm(80000000/30,2);
   SysTick_IntArm(80000000/11025,0); // 11.025kHz FOR MUSIC
   // initialize all data structures
   __enable_irq();
@@ -442,16 +340,9 @@ int music(void){ // final main
               BufCount8 = 0;
           }
       }
-
-      //ST7735_DrawBitmap(0, 45, background2, 128, 39);
-      //right_arrow.draw();
-      }
+  }
 
 
-    // wait for semaphore
-       // clear semaphore
-       // update ST7735R
-    // check for end game or level switch
   return 1;
 }
 
@@ -463,18 +354,12 @@ int main(void) {
     ST7735_InitPrintf();
     ST7735_FillScreen(ST7735_BLACK);
     Sensor.Init(); // PB18 = ADC1 channel 5, slidepot
-    Switch_Init(); // initialize switches
-    //Sound_Init();  // initialize sound
-    Key_Init();
+    Key_Init();  // initialize switches
     int i = 0;
-    //TExaS_Init(0,0,&TExaS_LaunchPadLogicPB27PB26); // PB27 and PB26
-      // initialize interrupts on TimerG12 at 30 Hz
-
-
-    // initialize all data structures
-    //TimerG0_IntArm(1000, 40, 1); //25ns*1000*40=1ms
     __enable_irq();
     bool isEnglish;
+    //START SCREEN
+    //SELECT LANGUAGE
     while(!Key_In()){
 
             ST7735_DrawBitmap(0,90, DDRlogo, 123, 33);
@@ -494,19 +379,24 @@ int main(void) {
             }
     }
     __disable_irq();
+    // initialize interrupts on TimerG12 at 30 Hz
     TimerG12_IntArm(80000000/30,2);
     __enable_irq();
     ST7735_FillScreen(0x0000);
+    //BEGIN GAMEPLAY
     while(1) {
+        //COVER ANY LEFTOVER SPRITE
         if (remove_arrow) {
             ST7735_FillRect(10,40,128,60,ST7735_BLACK);
             remove_arrow = false;
         }
         ST7735_DrawBitmap(0, 45, background2, 128, 48);
 
+        //DRAW ARROW BITMAPS
         for (i = 0; i < active_arrows.num_arrows; i++) {
             active_arrows.arr[i].draw();
         }
+        //DISPLAY SCORE
         ST7735_SetCursor(7, 14);
         if (isEnglish) {
             ST7735_OutString((char *)"Score: ");
@@ -515,10 +405,12 @@ int main(void) {
             ST7735_OutString((char *)"Puntaje: ");
         }
         ST7735_OutUDec(score);
-        if ((count > 50) && (count  % 10 == 0)) {
+        //SEND OUT ARROW
+        if ((time_counter > 50) && (time_counter  % 10 == 0)) {
             random_arrow();
         }
-        if (count > 2750) {
+        //FINISH
+        if (time_counter > 2750) {
           break;
         }
 
@@ -542,7 +434,6 @@ int main5(void) {  //THIS FUNCTION IS PLAYED ON THE OTHER MICROCONTROLLER
     __disable_irq();
     PLL_Init();
     LaunchPad_Init();
-    Switch_Init();
     Key_Init();
     __enable_irq();
     while (Key_In() != 0x02000000) {}
