@@ -31,12 +31,12 @@ diskio.o: ../diskio.cpp \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/hw_debugss.h \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/hw_sysctl.h \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/LaunchPad.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Timer.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SPI.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/integer.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/diskio.h
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/LaunchPad.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Clock.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Timer.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/SPI.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/integer.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/diskio.h
 
 /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/msp.h:
 
@@ -98,14 +98,14 @@ diskio.o: ../diskio.cpp \
 
 /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/LaunchPad.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/LaunchPad.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Clock.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Timer.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Timer.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SPI.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/SPI.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/integer.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/integer.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/diskio.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/diskio.h:

@@ -31,7 +31,7 @@ Switch.o: ../Switch.cpp \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/hw_debugss.h \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/hw_sysctl.h \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/LaunchPad.h
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/LaunchPad.h
 
 /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/msp.h:
 
@@ -93,4 +93,4 @@ Switch.o: ../Switch.cpp \
 
 /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/LaunchPad.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/LaunchPad.h:

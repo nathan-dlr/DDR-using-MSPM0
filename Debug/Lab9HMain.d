@@ -31,27 +31,27 @@ Lab9HMain.o: ../Lab9HMain.cpp \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/hw_debugss.h \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/hw_sysctl.h \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/ST7735.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/LaunchPad.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Timer.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SlidePot.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SPI.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/SmallFont.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Switch.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/images/images.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/integer.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/diskio.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/ff.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/ffconf.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC.cpp \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/FIFO2.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Arrows.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/arrow_list.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/common.h
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/ST7735.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Clock.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/LaunchPad.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Timer.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/SlidePot.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/DAC.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/SPI.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/SmallFont.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/Switch.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/images/images.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/integer.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/diskio.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/ff.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/ffconf.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/DAC.cpp \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/DAC.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Clock.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/FIFO2.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/Arrows.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/arrow_list.h \
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/common.h
 
 /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/msp.h:
 
@@ -113,44 +113,44 @@ Lab9HMain.o: ../Lab9HMain.cpp \
 
 /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/ST7735.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/ST7735.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Clock.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/LaunchPad.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/LaunchPad.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Timer.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Timer.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SlidePot.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/SlidePot.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/DAC.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SPI.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/SPI.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/SmallFont.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/SmallFont.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Switch.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/Switch.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/images/images.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/images/images.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/integer.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/integer.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/diskio.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/diskio.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/ff.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/ff.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/ffconf.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/ffconf.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC.cpp:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/DAC.cpp:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/DAC.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/DAC.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Clock.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/FIFO2.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/FIFO2.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/Arrows.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/Arrows.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/arrow_list.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/arrow_list.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/ECE319K_Lab9H/common.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/ECE319K_Lab9H/common.h:

@@ -5,17 +5,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../Arrows.cpp \
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.cpp \
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Clock.cpp \
 ../FIFO2.cpp \
 ../Lab9HMain.cpp \
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/LaunchPad.cpp \
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SPI.cpp \
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/ST7735.cpp \
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SlidePot.cpp \
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/LaunchPad.cpp \
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/SPI.cpp \
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/ST7735.cpp \
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/SlidePot.cpp \
 ../SmallFont.cpp \
 ../Switch.cpp \
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/TExaS.cpp \
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Timer.cpp \
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/TExaS.cpp \
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Timer.cpp \
 ../diskio.cpp \
 ../ff.cpp 
 
@@ -88,17 +88,17 @@ CPP_DEPS__QUOTED += \
 
 CPP_SRCS__QUOTED += \
 "../Arrows.cpp" \
-"/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.cpp" \
+"/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Clock.cpp" \
 "../FIFO2.cpp" \
 "../Lab9HMain.cpp" \
-"/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/LaunchPad.cpp" \
-"/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SPI.cpp" \
-"/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/ST7735.cpp" \
-"/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/SlidePot.cpp" \
+"/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/LaunchPad.cpp" \
+"/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/SPI.cpp" \
+"/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/ST7735.cpp" \
+"/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/SlidePot.cpp" \
 "../SmallFont.cpp" \
 "../Switch.cpp" \
-"/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/TExaS.cpp" \
-"/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Timer.cpp" \
+"/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/TExaS.cpp" \
+"/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Timer.cpp" \
 "../diskio.cpp" \
 "../ff.cpp" 
 

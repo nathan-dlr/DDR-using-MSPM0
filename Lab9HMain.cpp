@@ -80,33 +80,7 @@ void SysTick_Handler(void){
 }
 
 
-<<<<<<< HEAD
-void Key_Init(void){
-// Assumes LaunchPad_Init has been called
-// I.e., PortB has already been reset and activated (do not reset PortB here again)
-    uint32_t Input = 0x40081;
-    IOMUX->SECCFG.PINCM[PB0INDEX] = Input;
-    IOMUX->SECCFG.PINCM[PB1INDEX] = Input;
-    IOMUX->SECCFG.PINCM[PB2INDEX] = Input;
-    IOMUX->SECCFG.PINCM[PB3INDEX] = Input;
-}
 
-uint32_t Key_In(void){
-  uint32_t inputs = GPIOB->DIN31_0;
-  inputs &= 0x01F; // 1111 0000 0000 0000 0000 0000 0000
-  ///inputs = inputs >> 24;
-  return inputs;
-}
-
-
-
-// ****note to ECE319K students****
-// the data sheet says the ADC does not work when clock is 80 MHz
-// however, the ADC seems to work on my boards at 80 MHz
-// I suggest you try 80MHz, but if it doesn't work, switch to 40MHz
-=======
-
->>>>>>> 188de40 (created seperate files for arrow class, arrow_list struct, and switch inputs. moved adjust_arrow function into Lab9HMain.cpp and added simple class methods to access private data members)
 void PLL_Init(void){ // set phase lock loop (PLL)
   //Clock_Init40MHz(); // run this line for 40MHz
   Clock_Init80MHz(0);   // run this line for 80MHz
@@ -181,21 +155,15 @@ void TIMG12_IRQHandler(void){uint32_t pos,msg;
     //ADJUST LIST OF ARROWS
     adjust_arrows();
 
-<<<<<<< HEAD
-    right_arrow.Adjust_List();
     for (int k = 0; k < active_arrows.num_arrows; k++) {
         active_arrows.arr[k] = active_arrows.temp[k];
     }
-    count++;
-    count2 += 3;
     // 4) start sounds
     // 5) set semaphore
     // NO LCD OUTPUT IN INTERRUPT SERVICE ROUTINES
-=======
     //INCREMENT COUNTERS
     time_counter++;
     rndm_arrow_cntr += 3;
->>>>>>> 188de40 (created seperate files for arrow class, arrow_list struct, and switch inputs. moved adjust_arrow function into Lab9HMain.cpp and added simple class methods to access private data members)
     GPIOB->DOUTTGL31_0 = GREEN; // toggle PB27 (minimally intrusive debugging)
 }
 
@@ -210,12 +178,6 @@ void random_arrow() {
 }
 
 
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 188de40 (created seperate files for arrow class, arrow_list struct, and switch inputs. moved adjust_arrow function into Lab9HMain.cpp and added simple class methods to access private data members)
 int test_switches(void){ // main3
     uint32_t last=0,now;
     Clock_Init80MHz(0);
@@ -430,7 +392,7 @@ int main(void) {
     return 1;
 }
 
-int main5(void) {  //THIS FUNCTION IS PLAYED ON THE OTHER MICROCONTROLLER
+int main2(void) {  //THIS FUNCTION IS PLAYED ON THE OTHER MICROCONTROLLER
     __disable_irq();
     PLL_Init();
     LaunchPad_Init();

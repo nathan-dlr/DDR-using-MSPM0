@@ -1,6 +1,6 @@
 # FIXED
 
-Timer.o: /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Timer.cpp \
+Timer.o: /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Timer.cpp \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/msp.h \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/DeviceFamily.h \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/m0p/mspm0g350x.h \
@@ -31,7 +31,7 @@ Timer.o: /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Timer.cpp \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/hw_debugss.h \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/hw_sysctl.h \
  /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h \
- /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h
+ /Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Clock.h
 
 /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/msp.h:
 
@@ -93,4 +93,4 @@ Timer.o: /Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Timer.cpp \
 
 /Applications/ti/mspm0_sdk_1_20_01_06/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h:
 
-/Users/nathan/Desktop/MSPM0_ValvanoWare/inc/Clock.h:
+/Users/nathan/Desktop/MSPM0_ValvanoWare_V2/inc/Clock.h:
