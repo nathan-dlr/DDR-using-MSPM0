@@ -1,6 +1,9 @@
 .DS_Store
-.idea
+.idea/
 .ccsproject
 .cproject
 .project
+.settings/
+targetConfigs/
+ticlang/
 /Debug/
