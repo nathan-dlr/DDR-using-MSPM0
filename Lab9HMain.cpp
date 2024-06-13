@@ -195,60 +195,6 @@ int test_switches(void){ // main3
     }
 }
 
-int start_screen_test(void){ // start screen test
-  __disable_irq();
-  PLL_Init(); // set bus speed
-  LaunchPad_Init();
-  ST7735_InitPrintf();
-    //note: if you colors are weird, see different options for
-    // ST7735_InitR(INITR_REDTAB); inside ST7735_InitPrintf()
-  ST7735_FillScreen(ST7735_BLACK);
-  Sensor.Init(); // PB18 = ADC1 channel 5, slidepot
-  //Sound_Init();  // initialize sound
-  Key_Init();
-    // initialize interrupts on TimerG12 at 30 Hz
-  TimerG12_IntArm(80000000/30,2);
-  // initialize all data structures
-  __enable_irq();
-  bool isEnglish;
-  int wait = 1;
-  while(1){
-      while(wait) {
-          ST7735_DrawBitmap(0,90, DDRlogo, 123, 33);
-          ST7735_DrawBitmap(30, 125, language, 62, 26);
-          uint32_t sensorVal = Sensor.In();
-
-          if (sensorVal >= 2048) { //ENGLISH
-              ST7735_FillRect(10,117,18,17,ST7735_BLACK);
-              ST7735_DrawBitmap(10, 116, languageselect, 18, 17);
-              isEnglish = true;
-
-          }
-          else { //SPANISH
-              ST7735_FillRect(10,99,18,11,ST7735_BLACK);
-              ST7735_DrawBitmap(10,126, languageselect, 18, 17);
-              isEnglish = false;
-          }
-          if (Key_In()) {
-              wait = 0;
-          }
-      }
-      if (isEnglish) {
-          ST7735_DrawBitmap(96,70, right, 29, 32); //70 is OOB
-
-
-      }
-      else {
-          ST7735_DrawBitmap(3, 60, left, 30, 28); //40 ish is great
-      }
-
-
-    // wait for semaphore
-       // clear semaphore
-       // update ST7735R
-    // check for end game or level switch
-  }
-}
 
 
 int music(void){ // final main
